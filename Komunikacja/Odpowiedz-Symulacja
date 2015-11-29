@@ -1,1 +1,29 @@
- 
+//w kazdej klatce obiekt ma: położenie x,y i rotację r.
+
+simulation:{
+    objectsData:{
+        {
+            objectID: id, //dla potrzeb graficznej reprezentacji
+            wakeUpFrame: pierwsza klatka symulacji,
+            sleepFrame:{ //pozycja zanim nastąpiła symulacja.
+                {x:poziom, y:pion, r:rotacja},
+            },
+            frames: {
+                {x:poziom, y:pion, r:rotacja},
+                {x:poziom, y:...............},
+                ...
+            }
+        },
+        {},
+        ...
+    },
+    missleData:{
+        {
+            frames: {
+                {x:poziom, y:pion, r:rotacja},
+                {x:poziom, y:...............},
+                ...
+            }                
+        },
+    }
+}
