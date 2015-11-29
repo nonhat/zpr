@@ -1,1 +1,6 @@
+  Format JSON
  
+{
+    map: mapName,
+    //other???
+}
