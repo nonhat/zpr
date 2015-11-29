@@ -1,1 +1,25 @@
  
+map:{
+    name: nazwa,
+    size: {x:x, y:y},
+    background? takie tam dekoracje,
+    
+    missle:{
+        start: {x:x, y:y},
+    },
+    objects:{
+        {
+            id:id lub nazwa,
+            x:x,
+            y:y,
+            r:rotacja,
+            
+            DODATKOWE: kolor?,
+            
+        }
+        {}, nastepne obiekty....
+    }
+    ground:{
+        to już na późniejszy etap....
+    }
+}
