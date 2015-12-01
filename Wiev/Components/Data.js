@@ -23,18 +23,26 @@
 		}
 	}
 
-	function getActionData () {
-		var data = this.service.getActionData();
-		var missleData = data.missleData;
-		var objectsData = data.objectsData;
+	function getActionData (input) {
 		var that = this;
 		
-		adjustCoordinates.call(this, missleData);
-		objectsData.forEach(function(el, index) {
-			adjustCoordinates(el);
-		})
+		this.service.getActionData(input, function (data) {
+			loadCallback.call(that, data);
+		});
 
-		this.communication.passDataToContext(data,'actionData');
+		function loadCallback(data) {
+			var missleData = data.missleData;
+			var objectsData = data.objectsData;
+			
+			
+			adjustCoordinates.call(this, missleData);
+
+			objectsData.forEach(function(el, index) {
+				adjustCoordinates(el);
+			})
+
+			this.communication.passDataToContext(data,'actionData');
+		}
 	}
 
 	function adjustCoordinates(mapObject) {

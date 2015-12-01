@@ -1,6 +1,7 @@
 (function() {
 
 	var missle;
+	var missleStart;
 
 	stage.on('message:actionData', handleActionData);
 	stage.on('message:initialStageData', handleInitialStageData);
@@ -30,7 +31,7 @@
 	}
 
 	function evaluateMissle(missleData) {
-		var pos = missleData.start;
+		var pos = missleStart = missleData.start;
 
 		missle = new Circle(pos.x, pos.y, 10);
 
@@ -43,8 +44,8 @@
 
 		missle.on('pointerup', function(event) {
 			stage.sendMessage('missleFiered', {
-				x: event.x,
-				y: event.y
+				x: event.x - missleStart.x,
+				y: event.y - missleStart.y
 			});
 		});
 

@@ -24,10 +24,10 @@
 	    this.eventContexts[evname] = undefined;
 	}
 
-	Notyficator.prototype.triggerEvent = function(evname) {
+	Notyficator.prototype.triggerEvent = function(evname, data) {
 		if (this.eventContexts[evname]) {
 			this.eventContexts[evname].forEach(function(eventContext) {
-			 	eventContext.callback.call(eventContext.context);
+			 	eventContext.callback.call(eventContext.context, data);
 			});
 		}
 	}

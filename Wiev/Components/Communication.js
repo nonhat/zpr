@@ -13,8 +13,8 @@
 		notyficator.triggerEvent('mapResolved');
 	}
 
-	function onMissleFiered() {
-		notyficator.triggerEvent('missleFiered');
+	function onMissleFiered(data) {
+		notyficator.triggerEvent('missleFiered', data);
 	}
 
 	CommunicationManager.prototype.passDataToContext = function (data, dataType) {
