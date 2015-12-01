@@ -7,32 +7,32 @@
 	stage.on('message:objectsData', handleObjectsData);
 	
 	function handleActionData(actionData) {
-		handleMissleData(actionData.missle);
+		handleMissleData(actionData.missleData);
 	}
 
 	function handleMissleData (missleData) {
-		var path = missleData.path;
-		var interval = missleData.animationInterval;
+		var path = missleData.frames;
+		var interval = 10;
 		var animation = prepareKeyFrameAnimation(path, interval);
 
 		missle.animate(animation);
 	}
 
 	function handleInitialStageData (stageData) {
-		if(!stageData.objects) {
+		if(!stageData.missle || !stageData.objects) {
 			throw new Error('missing configuration');
 		}
 		
-		var missleData = stageData.objects.missle;
+		var missleData = stageData.missle;
 		evaluateMissle(missleData);
 		
 		stage.sendMessage('mapResolved', {});		
 	}
 
 	function evaluateMissle(missleData) {
-		var pos = missleData.startPosition;
+		var pos = missleData.start;
 
-		missle = new Circle(pos.x, pos.y, missleData.missleSize);
+		missle = new Circle(pos.x, pos.y, 10);
 
 		missle.on('drag', function(event) {
 			this.attr({

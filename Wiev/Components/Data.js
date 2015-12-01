@@ -8,25 +8,41 @@
 	} 
 
 	DataHandler.prototype.loadNewStage = function (stageId) {
-		var data = this.service.getInitialStageData(stageId);
-		this.stageSize = data.stage.size;
+		var that = this;
+		
+		this.service.getInitialStageData(stageId, function(data) {
+			loadCallback.call(that, data)
+		});
+		
+		function loadCallback(data) {
+			this.stageSize = data.size;
 
-		var missleData = data.objects.missle;
-		transformCoordinateSystem.call(this, missleData.startPosition);
-		this.communication.passDataToContext(data,'initialStageData');
+			var missleData = data.missle;
+			transformCoordinateSystem.call(this, missleData.start);
+			this.communication.passDataToContext(data,'initialStageData');
+		}
 	}
 
 	function getActionData () {
 		var data = this.service.getActionData();
-		var missleData = data.missle;
+		var missleData = data.missleData;
+		var objectsData = data.objectsData;
 		var that = this;
 		
-		missleData.path.map(function(el){
+		adjustCoordinates.call(this, missleData);
+		objectsData.forEach(function(el, index) {
+			adjustCoordinates(el);
+		})
+
+		this.communication.passDataToContext(data,'actionData');
+	}
+
+	function adjustCoordinates(mapObject) {
+		var that = this;
+		mapObject.frames.map(function(el){
 			transformCoordinateSystem.call(that, el);
 			return el;
 		});
-
-		this.communication.passDataToContext(data,'actionData');
 	}
 
 	
