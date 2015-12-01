@@ -2,23 +2,17 @@
 map:{
     name: nazwa,
     size: {x:x, y:y},
-    background? takie tam dekoracje,
-    
     missle:{
         start: {x:x, y:y},
     },
-    objects:{
-        {
+    objects:[{
             id:id lub nazwa,
             x:x,
             y:y,
-            r:rotacja,
-            
-            DODATKOWE: kolor?,
-            
-        }
-        {}, nastepne obiekty....
-    }
+            r:rotacja
+        },
+		...
+	],
     ground:{
         to już na późniejszy etap....
     }

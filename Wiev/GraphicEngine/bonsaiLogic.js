@@ -1,4 +1,5 @@
 (function() {
+
 	var missle;
 
 	stage.on('message:actionData', handleActionData);
@@ -18,12 +19,17 @@
 	}
 
 	function handleInitialStageData (stageData) {
-		console.log('jestem w handleInitialStageData');
 		if(!stageData.objects) {
 			throw new Error('missing configuration');
 		}
 		
 		var missleData = stageData.objects.missle;
+		evaluateMissle(missleData);
+		
+		stage.sendMessage('mapResolved', {});		
+	}
+
+	function evaluateMissle(missleData) {
 		var pos = missleData.startPosition;
 
 		missle = new Circle(pos.x, pos.y, missleData.missleSize);
@@ -41,10 +47,9 @@
 				y: event.y
 			});
 		});
+
 		missle.addTo(stage);
 		missle.attr('fillColor', 'green');
-		
-		stage.sendMessage('mapResolved', {});		
 	}
 
 	function handleObjectsData (objectsData) {
