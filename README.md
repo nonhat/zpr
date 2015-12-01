@@ -1,6 +1,8 @@
 # zpr
 Birds project
 
+WAŻNE: Po uruchomieniu serwera aplikacja dostępna jest pod http://adres_hosta/game/
+
 Boxing - C++ - cos do fizyki 2D
 test do kompilacji wymaga sdl2
 
