@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html ng-app="zpr.app-module">
+	<head>
+		<title></title>
+		<link href="app/zpr/zpr.css" rel="stylesheet" type="text/css">
+		<!-- ASSETS: LIBRARIES -->
+		<script src="app/assets/angular/angular.min.js"></script>
+		<script src="app/assets/bonsai/bonsai-0.4.1.min.js"></script>
+		
+
+		<!-- MODULE: zpr.app-module  -->
+		<script src="app/zpr/zpr.js"></script>
+
+		<!-- MOCKUP: CONSTANTS -->
+		<script src="app/responses/map.js"></script>
+		
+		<!-- STAGE COMPONENT -->
+		<script src="app/zpr/components/stage/stage.service.js"></script>
+		<script src="app/zpr/components/stage/stage.directive.js"></script>
+		<script src="app/zpr/components/stage/stagePanel.directive.js"></script>
+		<script src="app/zpr/components/stage/loginPanel.directive.js"></script>
+		
+		<!-- COMMUNICATION COMPONENT -->
+		<script src="app/zpr/components/communication/communication.service.js"></script>
+		
+		<!-- PLAYER COMPONENT -->
+		<script src="app/zpr/components/player/player.service.js"></script>
+		<script src="app/zpr/components/player/playerAuth.service.js"></script>
+		
+	</head>
+	<body>
+		<div stage-panel></div>
+	</body>
+</html>

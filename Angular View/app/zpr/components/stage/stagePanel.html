@@ -1,0 +1,7 @@
+<div>
+	<div class="menuPanel" ng-show="ctrl.loggedIn">
+		<div ng-class="ctrl.initStage ? 'init' : 're-init'" ng-click="ctrl.init()">{{ctrl.initStage ? 'RESTART LEVEL' : 'START GAME'}}</div>
+	</div>
+	<div ng-hide="ctrl.loggedIn" login-panel></div>
+	<div ng-show="ctrl.loggedIn" stage></div>
+</div>
