@@ -1,3 +1,4 @@
+
 <div>
 	<label for="user"> {{ctrl.userLabel}} </label> <input id="user" type="text">
 <div/>
@@ -5,5 +6,11 @@
 	<label for="label"> {{ctrl.passwordLabel}} </label> <input id="label" type="text">
 <div/>
 <div>
+	<label for="type"> {{ctrl.type}} </label> <input id="type" type="checkbox">
+<div/>
+
+<div>
+
 	<button ng-click="ctrl.authenticateUser()">Login</button>
+	<button ng-click="ctrl.startNew()">Login</button>
 <div/>

@@ -7,14 +7,17 @@
 	function StagePanel() {
 		return {
 			restrict: 'A',
-			templateUrl: 'app/zpr/components/stage/stagePanel.html',
+			templateUrl: 'app/zpr/components/stagePanel/stagePanel.html',
 			scope: {},
-			controller: [Ctrl],
+			controller: [
+				'PlayerService',
+				Ctrl
+			],
 			controllerAs: 'ctrl'
 		}
 	}
 
-	function Ctrl () {
+	function Ctrl (player) {
 		this.menuVisible = false;
 		this.initStage = false;
 		this.loggedIn = false;
@@ -29,6 +32,10 @@
 
 		this.showMenu = function () {
 			this.menuVisible = true;
+		}
+
+		this.getCurrentUser = function () {
+			return player.userName;
 		}
 	}	
 

@@ -13,8 +13,9 @@
 			require: '^^stagePanel',
 			restict: 'A',
 			scope: {},
-			templateUrl: 'app/zpr/components/stage/loginPanel.html',
+			templateUrl: 'app/zpr/components/stagePanel/loginPanel/loginPanel.html',
 			controller: [
+				'PlayerService',
 				'PlayerAuthService',
 				Ctrl
 			],
@@ -34,7 +35,7 @@
 
 
 
-	function Ctrl (playerAuth) {
+	function Ctrl (player, playerAuth) {
 		this.userLabel = 'User';
 		this.passwordLabel = 'Password';
 
@@ -44,6 +45,10 @@
 		this.authenticateUser = function () {
 			playerAuth.authenticate(this.userName, this.password);
 		}
+
+		this.startNew = function () {
+			player.createAnonim();
+		};
 	}
 
 })();

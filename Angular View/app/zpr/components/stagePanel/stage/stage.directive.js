@@ -8,7 +8,7 @@
 				require: '^^stagePanel',
 				restrict: 'A',
 				scope: {},
-				templateUrl: 'app/zpr/components/stage/stage.html',
+				templateUrl: 'app/zpr/components/stagePanel/stage/stage.html',
 				controller: [
 					'$scope',
 					'$rootScope',

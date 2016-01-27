@@ -17,7 +17,7 @@
 			communication.authenticate(this.userName, this.password, persistUser);
 			function persistUser (userData) {
 				if(userData.state = 'AUTHORIZED') {
-					player.setPlayerData(userData);
+					player.setPlayerData(userData, true);
 				} else {
 					currentUser = null;
 				}

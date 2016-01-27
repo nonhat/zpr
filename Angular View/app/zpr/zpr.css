@@ -9,22 +9,3 @@
 	width: 100%;
 	height: 100%;
 }
-
-.menuPanel {
-	width: 504px;
-	height: 1.1em;
-	font-size: 3em;
-	text-transform: uppercase;
-	font-family: Arial
-}
-
-.init {
-	width: 100%;
-	height: 100%;
-	background-color: red; 
-	color : white;
-}
-
-.re-init {
-	color: red;
-}

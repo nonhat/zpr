@@ -1,0 +1,31 @@
+[stage-panel] {
+	width: 504px;
+}
+
+
+[stage-panel] .menuPanel {
+	width: 100%;
+	height: 1.1em;
+	text-transform: uppercase;
+	font-family: Arial
+}
+
+[stage-panel] .init {
+	display: inline-block;
+	width: 50%;
+	height: 100%;
+	background-color: red; 
+	color : white;
+}
+
+[stage-panel] .re-init {
+	display: inline-block;
+	width: 50%;
+	height: 100%;
+	color: red;
+}
+
+[stage-panel] .user-label {
+	display: inline-block;
+	height: 100%;
+}
